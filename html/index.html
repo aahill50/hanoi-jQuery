@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script src="../js/jquery-2.1.1.js"></script>
   <script src="../js/hanoi-core.js" type="text/javascript" charset="utf-8"></script>
   <script src="../js/hanoi-view.js" type="text/javascript" charset="utf-8"></script>
   <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
 </head>
   <body>
     <script>
+    $(document).ready( function () {
+      var game = new Hanoi.Game();
+      var view = new Hanoi.View(game, $('.hanoi'));
+      view.render();
+      view.installClickHandle();
+    });
     </script>
     <div class="hanoi">
-      <ul class="stack"></ul>
-      <ul class="stack"></ul>
-      <ul class="stack"></ul>
+      <ul data-id="0" class="stack"></ul>
+      <ul data-id="1" class="stack"></ul>
+      <ul data-id="2" class="stack"></ul>
     </div>
   </body>
 </html>

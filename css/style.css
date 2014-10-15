@@ -1,0 +1,36 @@
+ul {
+  list-style: none;
+  float: left;
+}
+
+li {
+    border-radius: 10px;
+    width: 140px;
+    height: 40px;
+}
+.empty {
+  background: transparent;
+
+}
+
+.disk-1 {
+  background: #ff8844;
+  width: 60%;
+  margin: auto;
+}
+
+.disk-2 {
+  background: #84be33;
+  width: 80%;
+  margin: auto;
+}
+
+.disk-3 {
+  background: #25abcd;
+}
+.stack {
+  background: #cceecc;
+}
+.from {
+  background: #ccaaee;
+}

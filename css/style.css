@@ -1,6 +1,19 @@
+div, ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.hanoi {
+ border: 2px solid #ccc;
+ width: 426px;
+ margin: auto;
+}
+
 ul {
   list-style: none;
   float: left;
+  border: 1px solid #33ff22;
 }
 
 li {
@@ -33,4 +46,10 @@ li {
 }
 .from {
   background: #ccaaee;
+}
+
+.group:after {
+  display: block;
+  clear: both;
+  content: "";
 }

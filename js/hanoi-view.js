@@ -18,25 +18,35 @@
       var stack = game.towers[i];
       for (var i = 0; i < 3; i++) {
         if (stack[i]) {
-          $(this).append("<li class='disk-" + stack[i] + "'></li>")
+          $(this).prepend("<li class='disk-" + stack[i] + "'></li>")
         } else {
-          $(this).append("<li class='empty'></li>")
+          $(this).prepend("<li class='empty'></li>")
         }
       };
     });
   };
 
   View.prototype.installClickHandle = function () {
+    var game = this.game;
+    var that = this;
+
     $('.hanoi').on('click', '.stack', function (event) {
-      if($('.from').length === 0) {
-        $(this).addClass("from");
+      if($('.from').length === 0 || $(this).data('id') === $('.from').data('id')) {
+        $(this).toggleClass("from");
       }
       else {
         var fromStackIdx = $('.from').data('id')
         var toStackIdx = $(this).data('id')
-        console.log(fromStackIdx)
-        console.log(toStackIdx)
 
+        if (game.move(fromStackIdx, toStackIdx)) {
+          $('.from').toggleClass('from');
+        } else {
+          alert("You can't do that fool!")
+        }
+        that.render();
+        if (game.isWon()) {
+          alert("You're a genius!")
+        }
       }
     });
   };
